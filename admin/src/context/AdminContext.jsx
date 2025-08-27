@@ -36,7 +36,7 @@ function AdminContext({ children }) {
 
   const getOrders = async () => {
     try {
-      let res = await axios.get(serverUrl + "/api/order/list", {
+      let res = await axios.post(serverUrl + "/api/order/list", {
         withCredentials: true,
       });
       console.log("Orders API response:", res.data); // 👈 check this
