@@ -27,7 +27,7 @@ function Registration() {
 
     //const resultData = {name:name, email:email, password:password};
     try {
-      const result = await axios.post( serverUrl+"/api/auth/register", {name, email, password}, {withCredentials:true} )
+      const result = await axios.post( serverUrl +"/api/auth/register", {name, email, password}, {withCredentials:true} )
       console.log(result.data);
        getCurrentUser();
       navigate("/");

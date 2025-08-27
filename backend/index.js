@@ -19,7 +19,7 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [
-        "http://localhost:3000", // local frontend
+        "http://localhost:8000", // local frontend
       "https://ecommerce-onecart-frontendone.onrender.com",
       "https://ecommerce-onecart-admin.onrender.com",
     ],
@@ -36,10 +36,18 @@ app.get("/", (req, res) => {
   res.send("Hello Pooja!");
 });
 
+connectDb();
 app.listen(port, (err) => {
   if (err) {
     console.log("error while connected to the server");
   }
   console.log(`server is running at the http://localhost:${port}`);
-  connectDb();
+  
 });
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ message: "Internal Server Error" });
+});
+
+
