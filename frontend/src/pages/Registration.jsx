@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 import { useContext } from "react";
-import { authDataContext } from "../context/authContext";
+import { authDataContext } from "../context/AuthContext";
 import axios from 'axios';
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../utils/Firebase";
