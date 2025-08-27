@@ -24,7 +24,7 @@ function AdminContext({ children }) {
 
   const getProducts = async () => {
     try {
-      let res = await axios.get(serverUrl + "/api/product/list", {
+      let res = await axios.get(serverUrl + "/api/product/list",{}, {
         withCredentials: true,
       });
       console.log("Products API response:", res.data); // 👈 check this
@@ -34,17 +34,20 @@ function AdminContext({ children }) {
     }
   };
 
-  const getOrders = async () => {
-    try {
-      let res = await axios.post(serverUrl + "/api/order/list", {
-        withCredentials: true,
-      });
-      console.log("Orders API response:", res.data); // 👈 check this
-      setTotalOrders(res.data.length);
-    } catch (error) {
-      console.log("Order fetch error:", error);
-    }
-  };
+const getOrders = async () => {
+  try {
+    let res = await axios.post(
+      serverUrl + "/api/order/list",
+      {}, // empty body since no payload required
+      { withCredentials: true }
+    );
+    console.log("Orders API response:", res.data);
+    setTotalOrders(res.data.length);
+  } catch (error) {
+    console.log("Order fetch error:", error);
+  }
+};
+
 
   let value = {
     serverUrl,
