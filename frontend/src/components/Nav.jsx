@@ -7,7 +7,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { userDataContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { authDataContext } from "../context/authContext";
+import { authDataContext } from "../context/AuthContext";
 import { IoMdHome } from "react-icons/io";
 import { HiOutlineCollection } from "react-icons/hi";
 import { MdContacts } from "react-icons/md";
