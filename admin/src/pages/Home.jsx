@@ -19,7 +19,7 @@ function Home() {
         </div>
 
         {/* Dashboard Content on the right */}
-        <div className="flex-1 p-8 grid grid-cols-2 gap-6">
+        <div className="flex-1 p-8 grid grid-cols-2 mt-5 gap-6">
           {/* Total Products */}
           <div className="bg-[#1e293b] h-[300px] w-[300px] rounded-2xl shadow-md p-6 flex flex-col items-center justify-center">
             <h2 className="text-xl font-semibold">Total Products</h2>
