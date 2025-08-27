@@ -4,15 +4,21 @@ import Sidebar from '../component/Sidebar'
 import { adminDataContext } from '../context/AdminContext'
 
 function Home() {
+  let { totalProducts, totalOrders } = useContext(adminDataContext);
 
-  let { totalProducts, totalOrders } = useContext(adminDataContext)
-   return (
-    <div className='w-[100vw] h-[100vh] text-white bg-gradient-to-l from-[#141414] to-[#0c2025] relative flex flex-col'>
+  return (
+    <div className="w-[100vw] h-[100vh] text-white bg-gradient-to-l from-[#141414] to-[#0c2025] relative flex flex-col">
+      {/* Top Navigation */}
       <Nav />
-     
-        <Sidebar />
 
-        {/* Dashboard Content */}
+      {/* Main Content Layout */}
+      <div className="flex flex-1">
+        {/* Sidebar on the left */}
+        <div className="w-[250px]">
+          <Sidebar />
+        </div>
+
+        {/* Dashboard Content on the right */}
         <div className="flex-1 p-8 grid grid-cols-2 gap-6">
           {/* Total Products */}
           <div className="bg-[#1e293b] h-[300px] w-[300px] rounded-2xl shadow-md p-6 flex flex-col items-center justify-center">
@@ -27,8 +33,8 @@ function Home() {
           </div>
         </div>
       </div>
-    
+    </div>
   );
 }
 
-export default Home
+export default Home;
