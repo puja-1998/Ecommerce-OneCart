@@ -26,7 +26,7 @@ export const Register = async (req, res)=>{
         res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite:"none",
+            sameSite:"None",
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
         return res.status(201).json({message:"Register Successful"});
@@ -57,7 +57,7 @@ export const Login = async (req, res) =>{
         res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite:"none",
+            sameSite:"None",
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
         return res.status(201).json({message:"Login Successful"});
@@ -99,7 +99,7 @@ export const googleLogin = async (req, res)=>{
         res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite:"none",
+            sameSite:"None",
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
         return res.status(201).json({
@@ -126,7 +126,7 @@ export const adminLogin = async (req, res) => {
         res.cookie("token",token,{
             httpOnly:true,
             secure:true,
-            sameSite:"none",
+            sameSite:"None",
             maxAge: 1 * 24 * 60 * 60 * 1000
         })
         return res.status(201).json({
