@@ -26,11 +26,11 @@ function AdminContext({children}) {
 
     
   return (
-    <div>
+  
         <adminDataContext.Provider value={value}>
             {children}
         </adminDataContext.Provider>
-    </div>
+ 
   )
 }
 
